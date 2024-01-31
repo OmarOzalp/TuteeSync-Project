@@ -1,0 +1,100 @@
+{% extends "layout.html" %} {% block title %} Join Us {% endblock %}{% block
+body %}
+<div class="tutoring-journey">
+  <h1 class="continue statement">
+    You're on your way to enriching your tutoring journey
+  </h1>
+  <form action="/join-us" class="form" method="post">
+    <div class="enter">
+      <label for="fname">First name:</label>
+      <input
+        class="input"
+        type="text"
+        id="fname"
+        name="fname"
+        placeholder="First Name"
+      />
+    </div>
+    <div class="enter">
+      <label for="lname">Last name:</label>
+      <input
+        class="input"
+        type="text"
+        id="lname"
+        name="lname"
+        placeholder="Last Name"
+      />
+    </div>
+    <div class="enter lenter">
+      <label for="background">Educational Background:</label>
+      <input
+        placeholder="Education: [Your degree(s) or qualification(s) here] - [Name of the institution], [Year of completion]"
+        class="input linput"
+        type="text"
+        id="background"
+        name="background"
+      />
+    </div>
+    <div class="enter lenter">
+      <label for="Area of Expertise">Area of Expertise:</label>
+      <input
+        class="input linput"
+        type="text"
+        id="background"
+        name="background"
+        placeholder="Area of Expertise: [Your primary area of expertise or specialization]. [Any relevant certifications or additional qualifications if applicable]."
+      />
+    </div>
+    <div class="enter lenter">
+      <label for="govt-id">Government Issued ID:</label>
+      <div class="upload-container">
+        <input id="real-btn" class="file-upload" type="file" hidden="hidden" />
+        <button id="custom-btn" type="button" class="btn-file">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="upload-icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
+            />
+          </svg>
+          <span class="upload-label">Choose a file</span>
+        </button>
+        <span class="chosen-file">No file chosen</span>
+        <!--
+              <input
+              class="upload"
+              type="file"
+              name="fileToUpload"
+              id="fileToUpload"
+            />
+            <label class="id-label" for="govt-id">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="upload-icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
+                />
+              </svg>
+              <span>Choose a file</span>
+            </label>
+            -->
+      </div>
+    </div>
+    <button id="join-us-btn" type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

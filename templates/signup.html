@@ -1,0 +1,38 @@
+{% extends "layout.html" %} {% block title %} Sign Up {% endblock %}{% block
+body %}
+
+<form class="login" action="/signup" method="post">
+  <p class="error">{{ error }}</p>
+  <input
+    autocomplete="off"
+    autofocus
+    class="input-login"
+    id="username"
+    name="username"
+    placeholder="Username"
+    type="text"
+  />
+  <input
+    class="input-login"
+    id="email"
+    name="email"
+    placeholder="Email"
+    type="text"
+  />
+  <input
+    class="input-login"
+    id="password"
+    name="password"
+    placeholder="Password"
+    type="password"
+  />
+  <input
+    class="input-login"
+    id="confirm-pass"
+    name="confirm-pass"
+    placeholder="Confirm Password"
+    type="password"
+  />
+  <button class="login-btn" type="submit">Log In</button>
+</form>
+{% endblock %}

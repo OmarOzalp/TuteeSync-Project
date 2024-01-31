@@ -1,0 +1,66 @@
+{% extends "layout.html" %} {% block title %} Join Us {% endblock %}{% block
+body %} {% for tutor in tutors %}
+<div class="listing-main">
+  <img src="{{tutor['image']}}" alt="" />
+  <p class="prof">{{tutor['description']}} tutoring with {{tutor['name']}}</p>
+  <p class="listing-description">{{tutor["tutor_words"]}}</p>
+  <div class="fields">
+    <span class="listing-field">{{tutor['profession1']}}</span>
+    <span class="listing-field">{{tutor['profession2']}}</span>
+    <span class="listing-field">{{tutor['profession3']}}</span>
+    <span class="listing-field">{{tutor['profession4']}}</span>
+    <p class="languages">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="lang-icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802"
+        />
+      </svg>
+      Languages
+    </p>
+    <p class="lang">English</p>
+    <p class="lang">Arabic</p>
+    <p class="lang">French</p>
+  </div>
+
+  <div class="booking">
+    <div class="pricing">
+      <p class="pr">Pricing</p>
+      <p>${{tutor['price']}}/hr</p>
+    </div>
+
+    <div class="listing-rating">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        class="rating"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+      <span>{{tutor['rating']}}/5.0</span>
+    </div>
+    <div class="line"></div>
+    <p class="notification">
+      A notification with your reservation will be sent to {{tutor['name']}}, he
+      will contact you regarding further information.
+    </p>
+    <form class="reserve-form" action="/listings" method="get">
+      <button class="reserve-btn" type="submit">Reserve</button>
+    </form>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

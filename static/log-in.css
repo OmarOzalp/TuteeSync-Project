@@ -1,0 +1,63 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+/* MAIN COLOR: #001F3F
+  Tint (Lighter Shade): #003366
+  Shade (Darker Shade): #001326
+  GREY COLOR: #3f3f46
+  Tint (Lighter Shade): #52525b
+  Shade (Darker Shade): #27272a
+     
+*/
+
+.login {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  padding: 24px;
+  border-radius: 8px;
+  gap: 18px;
+  align-items: center;
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1);
+}
+
+.input-login {
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: #e6e9ec;
+  border: none;
+  transition: background-color ease 0.3s;
+}
+
+.input-login:focus {
+  border: none;
+  outline: 3px solid #66798c;
+}
+
+.input-login:hover {
+  background-color: #ccd2d9;
+}
+
+.login-btn {
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #001f3f;
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #003366;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-3px);
+}

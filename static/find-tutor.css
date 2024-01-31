@@ -1,0 +1,186 @@
+.main {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slogan {
+  font-size: 64px;
+  color: #001f3f;
+  margin-bottom: 12px;
+}
+
+.sub-slogan {
+  font-size: 24px;
+  color: #52525b;
+  margin-bottom: 64px;
+}
+
+.selector {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  background-color: #dadaf7;
+  gap: 20px;
+
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.btn-category {
+  font-size: 16px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  color: #001f3f;
+  background-color: white;
+  border: none;
+  height: 60px;
+  font-weight: 600;
+}
+
+.btn-category:hover {
+  cursor: pointer;
+  background-color: #e1e1f1;
+}
+
+.cat {
+  font-size: 32px;
+  color: #001f3f;
+  font-weight: 700;
+  grid-column: 1/-1;
+}
+
+.listing {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  transition: all 0.4s ease-out;
+  font-weight: 600;
+}
+
+.listing:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.grid {
+  width: fit-content;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr 250px 250px 250px;
+  margin-bottom: 128px;
+}
+
+.headshot {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 100px;
+  grid-column: 1/-1;
+  justify-self: center;
+}
+
+.listing-title {
+  font-size: 18px;
+  grid-column: 1/-1;
+}
+
+.listing-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 24px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.lang-container {
+  justify-self: right;
+}
+
+.lang {
+  font-size: 16px;
+
+  color: #52525b;
+  font-weight: 400;
+}
+
+.languages {
+  font-size: 16px;
+}
+
+.user-details {
+  display: flex;
+  gap: 6px;
+}
+
+.details {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 24px 24px;
+  row-gap: 16px;
+}
+
+.name {
+  margin-bottom: -12px;
+  font-size: 24px;
+  grid-column: 1/-1;
+  justify-self: center;
+}
+
+.description {
+  grid-column: 1/-1;
+  justify-self: center;
+  margin-bottom: 16px;
+}
+
+.field {
+  justify-self: center;
+  background-color: #dadaf7;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+.price {
+  /* should change this and make middle section its own grid */
+  grid-row: 6/7;
+  margin-top: 24px;
+  justify-self: center;
+}
+
+.rating {
+  width: 20px;
+  color: #001f3f;
+}
+
+.user-rating {
+  /* should change this and make middle section its own grid */
+  grid-row: 6/7;
+  margin-top: 24px;
+  justify-self: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.click {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: white;
+  background-color: #003366;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 8px;
+  border-radius: 100px;
+}
+
+.logo:link,
+.logo:visited {
+  text-decoration: none;
+}
+
+.listing a:link,
+.listing a:visited {
+  text-decoration: none;
+  color: #27272a;
+}

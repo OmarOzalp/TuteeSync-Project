@@ -1,0 +1,236 @@
+{% extends "layout.html" %} {% block title %} Find a Tutor {% endblock %}{% block body %}
+
+  
+    <div class="main">
+      <h1 class="slogan">Work with the best tutors</h1>
+      <p class="sub-slogan">Filter through our array of tutors to find one that fits your needs.</p>
+
+      <div class="grid">
+        <div class="selector">
+          <span class="cat">Categories</span>
+          <button class="btn-category btn-all">All</button
+          ><button class="btn-category btn-a">Arts</button
+          ><button class="btn-category btn-c">Computing</button
+          ><button class="btn-category btn-e">English</button
+          ><button class="btn-category btn-f">Foreign Language</button
+          ><button class="btn-category btn-h">Humanities</button
+          ><button class="btn-category btn-m">Math</button
+          ><button class="btn-category btn-s">Science</button>
+        </div>
+
+        {% for tutor in tutors %}
+        <div class='listing {{tutor["listing_type"]}}''>
+          <a href='/listing{{tutor["link"]}}''>
+          <div class="details">
+            <span class="click">Click</span>
+            <img class="headshot" src='{{ tutor["image"] }}' />
+            <span class="name">{{tutor["name"]}}</span>
+              <span class="description">{{tutor["description"]}} Tutor</span>
+              
+              <span class="field">{{tutor["profession1"]}}</span>
+              <span class="field">{{tutor["profession2"]}}</span>
+              <span class="field">{{tutor["profession3"]}}</span>
+              <span class="field">{{tutor["profession4"]}}</span>
+              <span class="price">${{tutor["price"]}}/hr</span>
+            
+              <div class="user-rating">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="rating"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>{{tutor["rating"]}}/5.0</span>
+              </div>
+            </div>
+          </a>
+          </div>
+            {% endfor %}
+
+            <!-- <div class="listing sci">
+              <div class="details">
+                <span class="click">Click</span>
+                <img class="headshot" src="/static/Science Tutor.jpg" />
+                <span class="name">Alex Reynolds</span>
+                  <span class="description">Science Tutor</span>
+                  
+                  <span class="field">Chemistry</span>
+                  <span class="field">Physics</span>
+                  <span class="field">Biology</span>
+                  <span class="price">$20/hr</span>
+                
+                  <div class="user-rating">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      class="rating"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span>4.9/5.0</span>
+                  </div>
+                </div>
+                </div>
+
+                <div class="listing art">
+                  <div class="details">
+                    <span class="click">Click</span>
+                    <img class="headshot" src="/static/Science Tutor.jpg" />
+                    <span class="name">Alex Reynolds</span>
+                      <span class="description">Arts Tutor</span>
+                      
+                      <span class="field">Chemistry</span>
+                      <span class="field">Physics</span>
+                      <span class="field">Biology</span>
+                      <span class="price">$20/hr</span>
+                    
+                      <div class="user-rating">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 16 16"
+                          fill="currentColor"
+                          class="rating"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        <span>4.9/5.0</span>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="listing eng">
+                      <div class="details">
+                        <span class="click">Click</span>
+                        <img class="headshot" src="/static/Headshot.jpg" />
+                        <span class="name">Omar Ozalp</span>
+                          <span class="description">English Tutor</span>
+                          
+                          <span class="field">Calculus</span>
+                          <span class="field">Pre-Calc</span>
+                          <span class="field">Algebra</span>
+                          <span class="field">Geometry</span>
+                          <span class="price">$15/hr</span>
+                        
+                          <div class="user-rating">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 16 16"
+                              fill="currentColor"
+                              class="rating"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span>5.0/5.0</span>
+                          </div>
+                        </div>
+                        </div>
+                        <div class="listing flang">
+                          <div class="details">
+                            <span class="click">Click</span>
+                            <img class="headshot" src="/static/Science Tutor.jpg" />
+                            <span class="name">Alex Reynolds</span>
+                              <span class="description">Spanish Tutor</span>
+                              
+                              <span class="field">Chemistry</span>
+                              <span class="field">Physics</span>
+                              <span class="field">Biology</span>
+                              <span class="price">$20/hr</span>
+                            
+                              <div class="user-rating">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 16 16"
+                                  fill="currentColor"
+                                  class="rating"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
+                                <span>4.9/5.0</span>
+                              </div>
+                            </div>
+                            </div>
+            
+                            <div class="listing com">
+                              <div class="details">
+                                <span class="click">Click</span>
+                                <img class="headshot" src="/static/Science Tutor.jpg" />
+                                <span class="name">Alex Reynolds</span>
+                                  <span class="description">Computer Science Tutor</span>
+                                  
+                                  <span class="field">Chemistry</span>
+                                  <span class="field">Physics</span>
+                                  <span class="field">Biology</span>
+                                  <span class="price">$20/hr</span>
+                                
+                                  <div class="user-rating">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 16 16"
+                                      fill="currentColor"
+                                      class="rating"
+                                    >
+                                      <path
+                                        fill-rule="evenodd"
+                                        d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z"
+                                        clip-rule="evenodd"
+                                      />
+                                    </svg>
+                                    <span>4.9/5.0</span>
+                                  </div>
+                                </div>
+                                </div>
+                                <div class="listing hum">
+                                  <div class="details">
+                                    <span class="click">Click</span>
+                                    <img class="headshot" src="/static/Science Tutor.jpg" />
+                                    <span class="name">Alex Reynolds</span>
+                                      <span class="description">History Tutor</span>
+                                      
+                                      <span class="field">Chemistry</span>
+                                      <span class="field">Physics</span>
+                                      <span class="field">Biology</span>
+                                      <span class="price">$20/hr</span>
+                                    
+                                      <div class="user-rating">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          viewBox="0 0 16 16"
+                                          fill="currentColor"
+                                          class="rating"
+                                        >
+                                          <path
+                                            fill-rule="evenodd"
+                                            d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z"
+                                            clip-rule="evenodd"
+                                          />
+                                        </svg>
+                                        <span>4.9/5.0</span>
+                                      </div>
+                                    </div>
+                                    </div>-->
+        </div>
+      </div> 
+    </div>
+    {% endblock %}

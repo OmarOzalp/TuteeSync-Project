@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block title %} Join Us {% endblock %}{% block
+login %}
+<a class="sign-up" href="/signup">Sign Up</a>
+{% endblock %}{% block body %}
+
+<form class="login" action="/login" method="post">
+  <p class="error">{{ error }}</p>
+  <div>
+    <input
+      autocomplete="off"
+      autofocus
+      class="input-login"
+      id="username"
+      name="username"
+      placeholder="Username"
+      type="text"
+    />
+  </div>
+  <div>
+    <input
+      class="input-login"
+      id="password"
+      name="password"
+      placeholder="Password"
+      type="password"
+    />
+  </div>
+  <button class="login-btn" type="submit">Log In</button>
+</form>
+{% endblock %}
