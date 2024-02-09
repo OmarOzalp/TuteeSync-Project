@@ -139,3 +139,32 @@ FONT SIZE SYSTEM (px)
     max-width: 100%;
   }
 }
+
+@media (max-width: 400px) {
+  .nav {
+    margin-bottom: 48px;
+  }
+  .nav-header {
+    font-size: 12px;
+  }
+
+  .main-statement {
+    margin-bottom: 48px;
+  }
+
+  .statement {
+    font-size: 48px;
+    letter-spacing: 1px;
+  }
+  .side-statement {
+    font-size: 18px;
+  }
+
+  .main {
+    max-width: 350px;
+    margin: auto;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
