@@ -80,5 +80,172 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const artBtns = document.querySelectorAll("select-category");
+  const disBtn = document.querySelector(".disclaimer-btn");
+  const disc = document.querySelector(".disclaimer");
+  if (disBtn != null) {
+    disBtn.addEventListener("click", function () {
+      disc.remove();
+    });
+  }
+
+  const password = document.getElementById("password");
+  const strength = document.querySelector(".pas-strength");
+  const strengthBar = document.querySelector(".strength-bar");
+
+  if (password != null) {
+    password.addEventListener("keyup", function () {
+      strengthBar.classList.remove("strength-bar-strong");
+      strengthBar.classList.remove("strength-bar-medium");
+      strengthBar.classList.remove("strength-bar-weak");
+      const pass = password.value;
+      const upperCaseLetters = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+      ];
+      // Array of lowercase letters a-z
+      const letters = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+      ];
+      // Array of symbols
+      const symbols = [
+        "!",
+        '"',
+        "#",
+        "$",
+        "%",
+        "&",
+        "'",
+        "(",
+        ")",
+        "*",
+        "+",
+        ",",
+        "-",
+        ".",
+        "/",
+        ":",
+        ";",
+        "<",
+        "=",
+        ">",
+        "?",
+        "@",
+        "[",
+        "]",
+        "^",
+        "_",
+        "`",
+        "{",
+        "|",
+        "}",
+        "~",
+      ];
+
+      let symbol = 0;
+      let capLetter = 0;
+      let lowLetter = 0;
+      let number = 0;
+      console.log(pass);
+      for (var i = 0; i < pass.length; i++) {
+        for (var k = 0; k < upperCaseLetters.length; k++) {
+          if (pass[i] == upperCaseLetters[k]) {
+            console.log("cap");
+            capLetter = 1;
+          }
+        }
+        for (var k = 0; k < letters.length; k++) {
+          if (pass[i] == letters[k]) {
+            console.log("low");
+            lowLetter = 1;
+          }
+        }
+        for (var k = 0; k < 10; k++) {
+          if (pass[i] == k) {
+            console.log(k);
+            number = 1;
+          }
+        }
+        for (var k = 0; k < symbols.length; k++) {
+          if (pass[i] == symbols[k]) {
+            console.log("symbol");
+            symbol = 1;
+          }
+        }
+      }
+      const sum = symbol + capLetter + lowLetter + number;
+      const str = document.getElementById("str");
+      console.log(sum);
+      if (pass.length < 8 || sum < 2) {
+        strengthBar.classList.toggle("strength-bar-weak");
+        str.textContent = "Weak";
+        str.style.color = "#ff0000";
+      }
+      if (pass.length >= 8 && sum >= 3) {
+        strengthBar.classList.toggle("strength-bar-strong");
+        str.textContent = "Strong";
+        str.style.color = "#008000";
+      } else if (pass.length >= 8 && sum >= 2) {
+        strengthBar.classList.toggle("strength-bar-medium");
+        str.textContent = "Medium";
+        str.style.color = "#ffbd31";
+      }
+    });
+  }
+
+  const userPopUp = document.querySelector(".user-name");
+  const open = document.querySelector(".user-info");
+  if (userPopUp != null) {
+    userPopUp.addEventListener("click", function () {
+      open.classList.toggle("hide");
+    });
+  }
 });

@@ -25,7 +25,7 @@ def find():
 @app.route("/join-us", methods=["GET", "POST"])
 def join():
     if request.method == "POST":
-        flash("Your information has been submitted")
+        flash("Your information has been submitted, our team will look over your responses as soon as possible")
         return redirect("/")
     else: 
         return render_template("join-us.html")
@@ -60,7 +60,12 @@ def signup():
         return render_template("signup.html")
     elif request.method == "POST":
         username = request.form.get("username")
+        
+        if username == "":
+             return render_template("signup.html", error="Please enter a username")
         email = request.form.get("email")
+        if email == "":
+             return render_template("signup.html", error="Please enter an email")
         emails = db.execute("SELECT * FROM users WHERE email = ?", email)
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
         if len(rows) > 0:
@@ -71,6 +76,25 @@ def signup():
         confPas = request.form.get("confirm-pass")
         if pas != confPas:
             return render_template("signup.html", error="Passwords do not match")
+        
+        low = 0
+        up = 0
+        symbol = 0
+        number = 0
+        for char in pas:
+            if char.isalpha():
+                if char.isupper():
+                    up = 1;
+                else:
+                    low = + 1
+            elif char.isnumeric():
+                number = 1;
+            else:
+                symbol = 1;
+        s = symbol + number + up + low
+        if len(pas) < 8 or s < 2:
+            return render_template("signup.html", error="Your password is too weak")
+        
         else:
             db.execute("INSERT INTO users (username, password, email) VALUES (?, ?, ?);",username, pas, email)
             session["name"] = username
@@ -120,5 +144,8 @@ def listingSophia():
 
 @app.route("/listings")
 def listings():
+    if len(session) == 1:
+        flash("You must sign in to create a reservation.")
+        return redirect("/")
     flash("Your reservation has been sent!")
     return redirect("/")

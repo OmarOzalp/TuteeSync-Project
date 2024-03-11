@@ -3,6 +3,7 @@ body %}
 
 <form class="login" action="/signup" method="post">
   <p class="error">{{ error }}</p>
+
   <input
     autocomplete="off"
     autofocus
@@ -33,6 +34,11 @@ body %}
     placeholder="Confirm Password"
     type="password"
   />
+  <p class="pas_strength" id="pas-strength">
+    Password strength: <span id="str"></span>
+  </p>
+  <div class="strength"><div class="strength-bar"></div></div>
+
   <button class="login-btn" type="submit">Log In</button>
 </form>
 {% endblock %}
